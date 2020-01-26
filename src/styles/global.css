@@ -1,0 +1,9 @@
+/* for nuka carousel arrows on small screens */
+@media only screen and (max-width: 60rem) {
+  .slider-control-centerleft {
+    display: none;
+  }
+  .slider-control-centerright {
+    display: none;
+  }
+}
