@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, navigate } from "gatsby"
 import { Menu, Sidebar, Icon, Responsive } from "semantic-ui-react"
+import { MobileOnlyDiv, DesktopOnlyDiv } from "../components/styledComponents"
 
 function Nav({ siteTitle }) {
   const [visible, setVisible] = useState(false)
@@ -11,7 +12,7 @@ function Nav({ siteTitle }) {
     </Menu.Item>
   )
   const fullMenu = () => (
-    <div style={{ margin: "0 auto 1rem auto", maxWidth: "100rem" }}>
+    <DesktopOnlyDiv style={{ margin: "0 auto 1rem auto", maxWidth: "100rem" }}>
       <Menu secondary pointing fluid onItemClick={() => setVisible(false)}>
         <LinkedItem to="/">{siteTitle}</LinkedItem>
         <Menu.Menu position="right">
@@ -21,61 +22,54 @@ function Nav({ siteTitle }) {
           <LinkedItem to="/recordings">Recordings</LinkedItem>
         </Menu.Menu>
       </Menu>
-    </div>
+    </DesktopOnlyDiv>
   )
 
   const mobileMenu = () => (
-    <Menu>
-      <Sidebar
-        as={Menu}
-        direction="right"
-        animation="overlay"
-        icon="labeled"
-        onHide={() => setVisible(false)}
-        vertical
-        visible={visible}
-        width="thin"
-        onItemClick={() => setVisible(false)}
-      >
-        <Menu.Item onClick={() => setVisible(!visible)}>
-          <Icon size="large" name="close" />
-        </Menu.Item>
-
-        <LinkedItem to="/">Home</LinkedItem>
-        <LinkedItem to="/about">About</LinkedItem>
-        <LinkedItem to="/contact">Contact</LinkedItem>
-        <LinkedItem to="/gallery">Gallery</LinkedItem>
-        <LinkedItem to="/recordings">Recordings</LinkedItem>
-      </Sidebar>
-
-      <Menu borderless fixed="top">
-        <Menu.Menu position="left">
-          <Menu.Item onClick={() => navigate("/")}>
-            <h2>SCC</h2>
-          </Menu.Item>
-        </Menu.Menu>
-        <Menu.Menu position="right">
+    <MobileOnlyDiv>
+      <Menu>
+        <Sidebar
+          as={Menu}
+          direction="right"
+          animation="overlay"
+          icon="labeled"
+          onHide={() => setVisible(false)}
+          vertical
+          visible={visible}
+          width="thin"
+          onItemClick={() => setVisible(false)}
+        >
           <Menu.Item onClick={() => setVisible(!visible)}>
-            <Icon size="large" name="bars" />
+            <Icon size="large" name="close" />
           </Menu.Item>
-        </Menu.Menu>
-      </Menu>
-    </Menu>
-  )
 
-  return fullMenu()
+          <LinkedItem to="/">Home</LinkedItem>
+          <LinkedItem to="/about">About</LinkedItem>
+          <LinkedItem to="/contact">Contact</LinkedItem>
+          <LinkedItem to="/gallery">Gallery</LinkedItem>
+          <LinkedItem to="/recordings">Recordings</LinkedItem>
+        </Sidebar>
+
+        <Menu borderless fixed="top">
+          <Menu.Menu position="left">
+            <Menu.Item onClick={() => navigate("/")}>
+              <h2>SCC</h2>
+            </Menu.Item>
+          </Menu.Menu>
+          <Menu.Menu position="right">
+            <Menu.Item onClick={() => setVisible(!visible)}>
+              <Icon size="large" name="bars" />
+            </Menu.Item>
+          </Menu.Menu>
+        </Menu>
+      </Menu>
+    </MobileOnlyDiv>
+  )
 
   return (
     <>
-      <Responsive as={"div"} {...Responsive.onlyMobile}>
-        {mobileMenu()}
-      </Responsive>
-      <Responsive as={"div"} {...Responsive.onlyTablet}>
-        {mobileMenu()}
-      </Responsive>
-      <Responsive as={"div"} {...Responsive.onlyComputer}>
-        {fullMenu()}
-      </Responsive>
+      {mobileMenu()}
+      {fullMenu()}
     </>
   )
 }

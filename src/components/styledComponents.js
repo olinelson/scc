@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Header, Container } from 'semantic-ui-react'
+import styled from "styled-components"
+import { Header, Container } from "semantic-ui-react"
 
 export const JumboHeader = styled(Header)`
   font-size: 5rem;
@@ -12,13 +12,13 @@ export const Jumbotron = styled.div`
   // border: 3px solid red !important;
 
   background-size: ${props =>
-    props.contain ? 'contain !important' : 'cover !important'};
+    props.contain ? "contain !important" : "cover !important"};
 
   background-repeat: no-repeat !important;
 
   background-image: ${props => `url("${props.src}")`};
 
-  height: ${props => (props.fullHeight ? '85vh !important' : '50vh')};
+  height: ${props => (props.fullHeight ? "85vh !important" : "50vh")};
   display: grid;
   @media only screen and (max-width: 1024px) {
     margin-top: -1rem;
@@ -37,9 +37,9 @@ export const SiteContainer = styled.div`
   grid-template-rows: auto 1fr auto;
   min-height: 90vh;
   grid-template-areas:
-    'main'
-    'space'
-    'footer';
+    "main"
+    "space"
+    "footer";
 `
 
 export const Footer = styled.div`
@@ -49,15 +49,13 @@ export const Footer = styled.div`
   background: #d3d3d3;
 `
 export const MobileOnlyDiv = styled.div`
-  display: block;
   @media only screen and (min-width: 1024px) {
-    display: none;
+    display: none !important;
   }
 `
 export const DesktopOnlyDiv = styled.div`
-  display: none;
-  @media only screen and (min-width: 1024px) {
-    display: block;
+  @media only screen and (max-width: 1024px) {
+    display: none !important;
   }
 `
 
