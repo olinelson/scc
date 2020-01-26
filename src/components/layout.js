@@ -7,6 +7,7 @@ import { Container, Icon, Divider, List } from "semantic-ui-react"
 import Header from "./header"
 
 // import 'semantic-ui-less/semantic.less'
+import "semantic-ui-css/semantic.min.css"
 
 import { SiteContainer, MobileOnlyDiv } from "../components/styledComponents"
 
