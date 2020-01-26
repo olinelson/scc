@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Link, navigate } from 'gatsby'
-import { Menu, Sidebar, Icon, Responsive } from 'semantic-ui-react'
+import React, { useState } from "react"
+import { Link, navigate } from "gatsby"
+import { Menu, Sidebar, Icon, Responsive } from "semantic-ui-react"
 
 function Nav({ siteTitle }) {
   const [visible, setVisible] = useState(false)
@@ -11,7 +11,7 @@ function Nav({ siteTitle }) {
     </Menu.Item>
   )
   const fullMenu = () => (
-    <div style={{ margin: '0 auto 1rem auto', maxWidth: '100rem' }}>
+    <div style={{ margin: "0 auto 1rem auto", maxWidth: "100rem" }}>
       <Menu secondary pointing fluid onItemClick={() => setVisible(false)}>
         <LinkedItem to="/">{siteTitle}</LinkedItem>
         <Menu.Menu position="right">
@@ -50,7 +50,7 @@ function Nav({ siteTitle }) {
 
       <Menu borderless fixed="top">
         <Menu.Menu position="left">
-          <Menu.Item onClick={() => navigate('/')}>
+          <Menu.Item onClick={() => navigate("/")}>
             <h2>SCC</h2>
           </Menu.Item>
         </Menu.Menu>
@@ -63,15 +63,17 @@ function Nav({ siteTitle }) {
     </Menu>
   )
 
+  return fullMenu()
+
   return (
     <>
-      <Responsive as={'div'} {...Responsive.onlyMobile}>
+      <Responsive as={"div"} {...Responsive.onlyMobile}>
         {mobileMenu()}
       </Responsive>
-      <Responsive as={'div'} {...Responsive.onlyTablet}>
+      <Responsive as={"div"} {...Responsive.onlyTablet}>
         {mobileMenu()}
       </Responsive>
-      <Responsive as={'div'} {...Responsive.onlyComputer}>
+      <Responsive as={"div"} {...Responsive.onlyComputer}>
         {fullMenu()}
       </Responsive>
     </>
