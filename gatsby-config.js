@@ -1,9 +1,23 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+const path = require(`path`)
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "Sydney Clarinet Choir",
+    siteURL: "https://olinelson.github.io",
+    // siteURL: 'http://localhost:8000',
+  },
+  pathPrefix: "/scc",
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`),
+      },
+    },
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-remark",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+  ],
 }
