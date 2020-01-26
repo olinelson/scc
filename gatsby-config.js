@@ -6,7 +6,7 @@ module.exports = {
     siteURL: "https://olinelson.github.io",
     // siteURL: 'http://localhost:8000',
   },
-  pathPrefix: "/scc2",
+  pathPrefix: "/scc",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
