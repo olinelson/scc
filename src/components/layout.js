@@ -3,10 +3,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql, Link } from "gatsby"
 import { Container, Icon, Divider, List } from "semantic-ui-react"
-
+import "semantic-ui-css/semantic.min.css"
 import Header from "./header"
-
-// import 'semantic-ui-less/semantic.less'
 
 import { SiteContainer, MobileOnlyDiv } from "../components/styledComponents"
 
