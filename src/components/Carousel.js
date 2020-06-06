@@ -4,36 +4,28 @@ import { Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Carousel from 'nuka-carousel'
-import { CarouselImage } from '../components/styledComponents'
+import Img from 'gatsby-image'
 
 export default function CarouselComponent () {
   const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: { absolutePath: { regex: "/(carousel)/" } }) {
-        edges {
-          node {
-            name
-            extension
-            dir
-            modifiedTime
-            publicURL
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          siteURL
-        }
+   query {
+  images: allImageSharp(filter: {
+    fluid: {
+      originalName: { regex: "/SCC/g"}
+    }
+  }) {
+    nodes {
+      id
+      __typename
+      fluid(fit: OUTSIDE) {
+       ...GatsbyImageSharpFluid
       }
     }
+  }
+}
   `)
 
-  const siteURL = data.site.siteMetadata.siteURL
-
-  const images = data.allFile.edges
-
-  console.log({ images })
-
+  console.log({ images: data.images.nodes })
   return (
     <Carousel
       heightMode='first'
@@ -58,8 +50,8 @@ export default function CarouselComponent () {
         />
       )}
     >
-      {images.map(i => (
-        <CarouselImage src={siteURL + i.node.publicURL} />
+      {data.images.nodes.map(i => (
+        <Img style={{ maxHeight: '100%', width: 'auto' }} key={i.id} fluid={i.fluid} />
       ))}
     </Carousel>
   )
