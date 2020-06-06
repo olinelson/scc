@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { StaticQuery, graphql, Link } from "gatsby"
-import { Container, Icon, Divider, List } from "semantic-ui-react"
-import "semantic-ui-css/semantic.min.css"
-import Header from "./header"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import { Container, Icon, Divider, List } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
+import Header from './header'
 
-import { SiteContainer, MobileOnlyDiv } from "../components/styledComponents"
+import { SiteContainer, MobileOnlyDiv } from '../components/styledComponents'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -22,12 +22,12 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <SiteContainer>
-        <div style={{ gridArea: "main" }}>
+        <div style={{ gridArea: 'main' }}>
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
-              { name: "description", content: "Sample" },
-              { name: "keywords", content: "sample, something" },
+              // { name: 'description', content: 'Sample' },
+              // { name: 'keywords', content: 'sample, something' }
             ]}
           />
 
@@ -37,36 +37,36 @@ const Layout = ({ children }) => (
             <Divider hidden />
           </MobileOnlyDiv>
 
-          <div style={{ margin: "0 auto", maxWidth: "100rem" }}>{children}</div>
+          <div style={{ margin: '0 auto', maxWidth: '100rem' }}>{children}</div>
         </div>
 
-        <Divider style={{ gridArea: "space" }} hidden />
+        <Divider style={{ gridArea: 'space' }} hidden />
 
-        <div style={{ gridArea: "footer" }}>
-          <Container textAlign="center">
+        <div style={{ gridArea: 'footer' }}>
+          <Container textAlign='center'>
             {/* <Image centered size="tiny" src="logos/logo.png" /> */}
             <h4>Sydney Clarinet Choir</h4>
 
-            <List horizontal inverted={false} divided link size="small">
-              <List.Item as={Link} to="/">
+            <List horizontal inverted={false} divided link size='small'>
+              <List.Item as={Link} to='/'>
                 Home
               </List.Item>
-              <List.Item as={Link} to="/about">
+              <List.Item as={Link} to='/about'>
                 About
               </List.Item>
-              <List.Item as={Link} to="/contact">
+              <List.Item as={Link} to='/contact'>
                 Contact
               </List.Item>
-              <List.Item as={Link} to="/gallery">
+              <List.Item as={Link} to='/gallery'>
                 Gallery
               </List.Item>
-              <List.Item as={Link} to="/recordings">
+              <List.Item as={Link} to='/recordings'>
                 Recordings
               </List.Item>
             </List>
             <Divider hidden />
-            <small style={{ color: "grey" }}>
-              <Icon name="copyright" />
+            <small style={{ color: 'grey' }}>
+              <Icon name='copyright' />
               {new Date().getFullYear()}
             </small>
             <Divider hidden />
@@ -78,7 +78,7 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

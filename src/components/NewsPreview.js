@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link, navigate } from 'gatsby'
 import { Item } from 'semantic-ui-react'
+import Img from 'gatsby-image'
 
-export default function NewsPreview() {
+export default function NewsPreview () {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -18,24 +19,25 @@ export default function NewsPreview() {
           }
         }
       }
-      allFile(filter: { absolutePath: { regex: "/(resources)/" } }) {
-        edges {
-          node {
-            name
-            extension
-            dir
-            modifiedTime
-            publicURL
-          }
-        }
-      }
       site {
         siteMetadata {
           siteURL
         }
       }
+      images: allImageSharp {
+        edges {
+          node {
+            fluid(fit: OUTSIDE) {
+            originalName
+            ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
   `)
+
+  console.log(data.images)
 
   return (
     <>
@@ -47,22 +49,17 @@ export default function NewsPreview() {
             date,
             preview,
             featureImage,
-            path,
+            path
           } = p.node.frontmatter
 
-          let foundImage = data.allFile.edges.find(
-            i => i.node.name === featureImage
-          )
-
+          const previewImage = data.images.edges.find(e => e.node.fluid.originalName == featureImage)
           return (
-            <Item onClick={() => navigate(path)}>
-              <Item.Image
-                size="small"
-                src={data.site.siteMetadata.siteURL + foundImage.node.publicURL}
-              />
-
+            <Item key={path} onClick={() => navigate(path)}>
+              <Item.Image>
+                <Img fluid={previewImage.node.fluid} />
+              </Item.Image>
               <Item.Content>
-                <Item.Header as="a">{title}</Item.Header>
+                <Item.Header as='a'>{title}</Item.Header>
                 <Item.Meta>{date}</Item.Meta>
                 <Item.Description>{preview}</Item.Description>
                 <Item.Extra as={Link} to={path}>

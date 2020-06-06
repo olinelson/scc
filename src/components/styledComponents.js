@@ -35,7 +35,7 @@ export const SiteContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
-  min-height: 90vh;
+  min-height: 100vh;
   grid-template-areas:
     "main"
     "space"

@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require("path")
+const path = require('path')
 
 // exports.onCreateWebpackConfig = ({ stage, actions }) => {
 //   actions.setWebpackConfig({
@@ -21,7 +21,7 @@ const path = require("path")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const newsTemplate = path.resolve(`src/templates/newsTemplate.js`)
+  const newsTemplate = path.resolve('src/templates/newsTemplate.js')
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -32,6 +32,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               path
+              featureImage
             }
           }
         }
@@ -40,14 +41,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `)
   // Handle errors
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    reporter.panicOnBuild('Error while running GraphQL query.')
     return
   }
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    console.log({ node })
     createPage({
       path: node.frontmatter.path,
       component: newsTemplate,
-      context: {}, // additional data can be passed via context
+      context: { featureImage: node.frontmatter.featureImage }
     })
   })
 }
