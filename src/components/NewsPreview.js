@@ -37,8 +37,6 @@ export default function NewsPreview () {
     }
   `)
 
-  console.log(data.images)
-
   return (
     <>
       <h1>News</h1>

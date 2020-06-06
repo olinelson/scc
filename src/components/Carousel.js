@@ -23,8 +23,6 @@ export default function CarouselComponent () {
   }
 }
   `)
-
-  console.log({ images: data.images.nodes })
   return (
     <Carousel
       heightMode='first'

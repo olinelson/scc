@@ -9,7 +9,6 @@ function Template ({
 }) {
   const { markdownRemark, featureImageQuery } = data
   const { frontmatter, html } = markdownRemark
-  console.log(featureImageQuery)
   return (
     <Layout>
       <Img style={{ maxHeight: '40vh' }} fluid={featureImageQuery.nodes[0].fluid} />

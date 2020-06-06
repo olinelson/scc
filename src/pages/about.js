@@ -20,8 +20,6 @@ const About = ({ location }) => {
 
   `)
 
-  console.log(data)
-
   return (
     <Layout location={location}>
       <Container text>
