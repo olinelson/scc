@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Icon } from 'semantic-ui-react'
-import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Carousel from 'nuka-carousel'
 import Img from 'gatsby-image'

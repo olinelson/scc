@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Header, Container } from "semantic-ui-react"
+import styled from 'styled-components'
+import { Header, Container } from 'semantic-ui-react'
 
 export const JumboHeader = styled(Header)`
   font-size: 5rem;
@@ -12,13 +12,13 @@ export const Jumbotron = styled.div`
   // border: 3px solid red !important;
 
   background-size: ${props =>
-    props.contain ? "contain !important" : "cover !important"};
+    props.contain ? 'contain !important' : 'cover !important'};
 
   background-repeat: no-repeat !important;
 
   background-image: ${props => `url("${props.src}")`};
 
-  height: ${props => (props.fullHeight ? "85vh !important" : "50vh")};
+  height: ${props => (props.fullHeight ? '85vh !important' : '50vh')};
   display: grid;
   @media only screen and (max-width: 1024px) {
     margin-top: -1rem;
@@ -64,12 +64,4 @@ export const GridContainer = styled(Container)`
   display: grid !important;
   align-content: center;
   justify-items: center;
-`
-export const CarouselImage = styled.div`
-  background-image: url(${props => props.src});
-  height: 50vh;
-  width: auto;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 `
