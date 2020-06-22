@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm'
 
 const Contact = ({ location }) => (
   <Layout location={location}>
-    <ContactForm />
+    <ContactForm style={{ justifySelf: 'center', alignSelf: 'center' }} />
   </Layout>
 )
 

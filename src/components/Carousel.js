@@ -28,6 +28,8 @@ export default function CarouselComponent () {
       heightMode='first'
       width='100%'
       style={{ margin: 'auto', maxWidth: '90vw' }}
+      pauseOnHover
+      autoplay
       renderCenterLeftControls={({ previousSlide }) => (
         <Icon
           size='big'
@@ -35,6 +37,7 @@ export default function CarouselComponent () {
           style={{ cursor: 'pointer' }}
           onClick={previousSlide}
           color='grey'
+          inverted
         />
       )}
       renderCenterRightControls={({ nextSlide }) => (
@@ -44,6 +47,7 @@ export default function CarouselComponent () {
           style={{ cursor: 'pointer' }}
           onClick={nextSlide}
           color='grey'
+          inverted
         />
       )}
     >
