@@ -20,23 +20,24 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <SiteContainer>
-        <div style={{ gridArea: 'main' }}>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={
+            [
               // { name: 'description', content: 'Sample' },
               // { name: 'keywords', content: 'sample, something' }
-            ]}
-          />
-
+            ]
+          }
+        />
+        <div style={{ gridArea: 'main' }}>
           <Header siteTitle={data.site.siteMetadata.title} />
 
           <div style={{ margin: '0 auto', maxWidth: '100rem' }}>{children}</div>
         </div>
 
-        <Divider style={{ gridArea: 'space' }} hidden />
+        {/* <Divider style={{ gridArea: 'space' }} hidden /> */}
 
         <div style={{ gridArea: 'footer' }}>
           <Container textAlign='center'>

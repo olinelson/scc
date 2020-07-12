@@ -6,4 +6,7 @@
   .slider-control-centerright {
     display: none;
   }
+  .slider-control-bottomcenter {
+    display: none;
+  }
 }

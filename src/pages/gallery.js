@@ -9,9 +9,9 @@ const Gallery = ({ location }) => (
     <Divider hidden />
     <Container>
       <h1>Gallery</h1>
-      <Carousel />
-      <Divider hidden />
     </Container>
+    <Divider hidden />
+    <Carousel />
   </Layout>
 )
 

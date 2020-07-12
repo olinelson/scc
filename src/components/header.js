@@ -11,7 +11,7 @@ function Nav ({ siteTitle }) {
       {children}
     </Menu.Item>
   )
-  const fullMenu = () => (
+  const FullMenu =
     <DesktopOnlyDiv style={{ margin: '0 auto 1rem auto', maxWidth: '100rem' }}>
       <Menu secondary pointing fluid onItemClick={() => setVisible(false)}>
         <LinkedItem to='/'>{siteTitle}</LinkedItem>
@@ -23,11 +23,10 @@ function Nav ({ siteTitle }) {
         </Menu.Menu>
       </Menu>
     </DesktopOnlyDiv>
-  )
 
-  const mobileMenu = () => (
+  const MobileMenu =
     <MobileOnlyDiv>
-      <Menu>
+      <Menu style={{ border: 'none' }}>
         <Sidebar
           as={Menu}
           direction='right'
@@ -63,14 +62,14 @@ function Nav ({ siteTitle }) {
           </Menu.Menu>
         </Menu>
       </Menu>
+
     </MobileOnlyDiv>
-  )
 
   return (
-    <>
-      {mobileMenu()}
-      {fullMenu()}
-    </>
+    <div style={{ border: 'none !important' }}>
+      {MobileMenu}
+      {/* {FullMenu} */}
+    </div>
   )
 }
 

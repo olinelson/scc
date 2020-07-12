@@ -27,7 +27,7 @@ export default function CarouselComponent () {
     <Carousel
       heightMode='first'
       width='100%'
-      style={{ margin: 'auto', maxWidth: '90vw' }}
+      style={{ margin: 'auto', maxWidth: 'min(100vw, 80rem)' }}
       pauseOnHover
       autoplay
       renderCenterLeftControls={({ previousSlide }) => (
