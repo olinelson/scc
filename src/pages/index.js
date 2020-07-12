@@ -8,15 +8,14 @@ import {
 } from '../components/styledComponents'
 import Events from '../components/Events'
 import { Link } from 'gatsby'
-import NewsPreview from '../components/NewsPreview'
+// import NewsPreview from '../components/NewsPreview'
 import { Button, Container, Divider } from 'semantic-ui-react'
 import Layout from '../components/layout'
 
 // images
 import clarinetsImage from '../images/resources/clarinets.jpg'
-// import concert1Image from '../images/resources/concert1.jpg'
 import concert2Image from '../images/resources/concert2.jpg'
-import concert1Image from '../images/carousel/SCC-Concert-03.jpg'
+import concert1Image from '../images/carousel/SCC-10.jpg'
 
 function IndexPage () {
   return (

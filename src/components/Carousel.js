@@ -17,12 +17,32 @@ export default function CarouselComponent () {
       id
       __typename
       fluid(fit: OUTSIDE) {
+        originalName
        ...GatsbyImageSharpFluid
       }
     }
   }
 }
   `)
+
+  const sortedImages = data.images.nodes.sort((a, b) => {
+    return (
+      parseInt(a.fluid.originalName.split('-')[1]) -
+      parseInt(b.fluid.originalName.split('-')[1])
+    )
+    // const nameA = a.fluid.originalName.toUpperCase()
+    // const nameB = b.fluid.originalName.toUpperCase()
+    // console.log(nameA)
+    // if (nameA < nameB) {
+    //   return -1
+    // }
+    // if (nameA > nameB) {
+    //   return 1
+    // }
+    // return 0
+  })
+
+  console.log(sortedImages)
   return (
     <Carousel
       heightMode='first'
@@ -51,7 +71,7 @@ export default function CarouselComponent () {
         />
       )}
     >
-      {data.images.nodes.map(i => (
+      {sortedImages.map(i => (
         <Img style={{ maxHeight: '100%', width: 'auto' }} key={i.id} fluid={i.fluid} />
       ))}
     </Carousel>

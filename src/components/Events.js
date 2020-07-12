@@ -19,7 +19,12 @@ function Events () {
     <>
       <h1>Events</h1>
       <Segment size='large'>
-        <p>All performances and concerts have been cancelled or postponed indefinitely due to the Covid-19 pandemic. Once the social distancing restrictions have been lifted, and when it is safe for gatherings to take place, Sydney Clarinet Choir will post details of upcoming performances. In the meantime, watch this space for news of our remote recordings during lockdown.</p>
+        <p>
+          During Covid-19 restrictions Sydney Clarinet Choir is meeting and
+          rehearsing remotely. We meet once every fortnight online and, with
+          professional tuition, collaborate and practise using an online
+          recording application.
+        </p>
       </Segment>
     </>
   )
