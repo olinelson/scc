@@ -12,6 +12,8 @@ const Gallery = ({ location }) => (
     </Container>
     <Divider hidden />
     <Carousel />
+    <Divider hidden />
+    <Divider hidden />
   </Layout>
 )
 
