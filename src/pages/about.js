@@ -39,7 +39,7 @@ const About = ({ location }) => {
 
         <Item.Group>
           <Item>
-            <Item.Image size='medium'>
+            <Item.Image size='medium' style={{ minWidth: '12rem' }}>
               <Img fluid={data.debHeadshot.childImageSharp.fluid} />
             </Item.Image>
 
@@ -110,6 +110,7 @@ const About = ({ location }) => {
 
         <h4>Guest Artists</h4>
         <p>To be advised</p>
+        <Divider hidden />
       </Container>
     </Layout>
   )

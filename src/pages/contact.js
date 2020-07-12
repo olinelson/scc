@@ -7,6 +7,7 @@ const Contact = ({ location }) => (
   <Layout location={location}>
     <Divider hidden />
     <ContactForm style={{ justifySelf: 'center', alignSelf: 'center' }} />
+    <Divider hidden />
   </Layout>
 )
 

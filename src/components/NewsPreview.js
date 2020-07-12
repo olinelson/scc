@@ -55,7 +55,7 @@ export default function NewsPreview () {
           const prettyDate = moment(date).calendar()
           return (
             <Item key={path} onClick={() => navigate(path)}>
-              <Item.Image>
+              <Item.Image style={{ minWidth: '20rem', maxWidth: '30rem', width: '100%', overflow: 'hidden' }}>
                 <Img fluid={previewImage.node.fluid} />
               </Item.Image>
               <Item.Content>

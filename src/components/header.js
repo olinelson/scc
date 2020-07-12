@@ -68,7 +68,7 @@ function Nav ({ siteTitle }) {
   return (
     <div style={{ border: 'none !important' }}>
       {MobileMenu}
-      {/* {FullMenu} */}
+      {FullMenu}
     </div>
   )
 }
