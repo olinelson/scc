@@ -26,8 +26,10 @@ const Layout = ({ children }) => (
           title={data.site.siteMetadata.title}
           meta={
             [
-              // { name: 'description', content: 'Sample' },
-              // { name: 'keywords', content: 'sample, something' }
+              {
+                name: 'description',
+                content: 'The Sydney Clarinet Choir was founded by Peter Scaysbrook and Deborah de Graaff to provide experienced players with the opportunity to play chamber music. The members come from diverse backgrounds but have a common interest in the love of music and in the many tonal colours and abilities of the clarinet. Typically, our concert programmes offer a wide selection of genres and styles exactly showcasing those abilities'
+              }
             ]
           }
         />
