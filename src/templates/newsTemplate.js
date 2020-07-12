@@ -13,7 +13,10 @@ function Template ({
   const prettyDate = moment(frontmatter.date).calendar()
   return (
     <Layout>
-      <Img style={{ maxHeight: '40vh' }} fluid={featureImageQuery.nodes[0].fluid} />
+      <Img
+        style={{ maxHeight: '40vh' }}
+        fluid={featureImageQuery.nodes[0].fluid}
+      />
       <Divider hidden />
       <Container text>
         <h1>{frontmatter.title}</h1>
@@ -23,6 +26,7 @@ function Template ({
           className='blog-post-content'
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <Divider hidden />
       </Container>
     </Layout>
   )
