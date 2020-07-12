@@ -27,6 +27,7 @@ function Template ({
           dangerouslySetInnerHTML={{ __html: html }}
         />
         <Divider hidden />
+        <Divider hidden />
       </Container>
     </Layout>
   )
