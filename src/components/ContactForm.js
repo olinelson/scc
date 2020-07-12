@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Message, Container } from 'semantic-ui-react'
 
-export default function ContactForm() {
+export default function ContactForm () {
   const [status, setStatus] = useState('')
   const [buttonDisabled, setButtonDisabled] = useState(false)
   const [buttonLoading, setButtonLoading] = useState(false)
@@ -33,51 +33,52 @@ export default function ContactForm() {
       <Form
         style={{ margin: 'auto auto' }}
         onSubmit={ev => submitForm(ev)}
-        action="https://formspree.io/mlejevka"
-        method="POST"
+        action='https://formspree.io/mlejevka'
+        method='POST'
         error={status === 'ERROR'}
         success={status === 'SUCCESS'}
+        size='large'
       >
         <h1>Contact</h1>
         <Form.Input
           required
-          label="Full Name"
-          name="name"
-          placeholder="Wolfgang Amadeus Mozart"
+          label='Full Name'
+          name='name'
+          placeholder='Wolfgang Amadeus Mozart'
         />
         <Form.Input
           required
-          label="Email"
-          name="email"
-          type="email"
-          placeholder="wolfy@gmail.com"
+          label='Email'
+          name='email'
+          type='email'
+          placeholder='wolfy@gmail.com'
         />
         <Form.Input
           required
-          label="Phone Number"
-          name="phone"
-          type="phone"
-          placeholder="0400123123"
+          label='Phone Number'
+          name='phone'
+          type='phone'
+          placeholder='0400123123'
         />
 
         <Form.TextArea
           required
-          name="message"
-          label="Message"
-          placeholder="Type your message here..."
+          name='message'
+          label='Message'
+          placeholder='Type your message here...'
         />
-        <Button loading={buttonLoading} disabled={buttonDisabled} type="submit">
+        <Button loading={buttonLoading} disabled={buttonDisabled} type='submit'>
           Send
         </Button>
         <Message
           success
-          header="Message Sent"
-          content="Your email has been sent. Thankyou"
+          header='Message Sent'
+          content='Your email has been sent. Thankyou'
         />
         <Message
           error
-          header="Action Forbidden"
-          content="Something went wrong, please try again..."
+          header='Action Forbidden'
+          content='Something went wrong, please try again...'
         />
       </Form>
     </Container>
