@@ -14,8 +14,9 @@ import Layout from '../components/layout'
 
 // images
 import clarinetsImage from '../images/resources/clarinets.jpg'
-import concert1Image from '../images/resources/concert1.jpg'
+// import concert1Image from '../images/resources/concert1.jpg'
 import concert2Image from '../images/resources/concert2.jpg'
+import concert1Image from '../images/carousel/SCC-Concert-03.jpg'
 
 function IndexPage () {
   return (
@@ -31,13 +32,13 @@ function IndexPage () {
       <Divider hidden />
 
       <Container>
-        <NewsPreview />
+        {/* <NewsPreview />
 
-        <Divider hidden />
+        <Divider hidden /> */}
 
-        <Jumbotron src={concert1Image}>
+        <Jumbotron backgroundPosition='0% 0%' src={concert1Image}>
           <JumboMessage>
-            <Button as={Link} to='/contact' size='massive'>
+            <Button as={Link} to='/contact' color='yellow' size='massive'>
               Play with SCC
             </Button>
           </JumboMessage>
