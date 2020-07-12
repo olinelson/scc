@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{"7QEx":function(e,n,a){"use strict";a.r(n);var t=a("q1tI"),l=a.n(t),o=a("Mt1y"),c=a("yE/o"),r=a("Bl7J");n.default=function(e){var n=e.location;return l.a.createElement(r.a,{location:n},l.a.createElement(o.a,{hidden:!0}),l.a.createElement(c.a,null,l.a.createElement("h1",null,"Recordings"),l.a.createElement("p",null,"coming soon...")))}}}]);
-//# sourceMappingURL=component---src-pages-recordings-js-eb9e6e0508ed5bf71fad.js.map
