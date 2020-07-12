@@ -3,19 +3,21 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { Container, Divider } from 'semantic-ui-react'
 import Img from 'gatsby-image'
+import moment from 'moment'
 
 function Template ({
   data // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark, featureImageQuery } = data
   const { frontmatter, html } = markdownRemark
+  const prettyDate = moment(frontmatter.date).calendar()
   return (
     <Layout>
       <Img style={{ maxHeight: '40vh' }} fluid={featureImageQuery.nodes[0].fluid} />
       <Divider hidden />
       <Container text>
         <h1>{frontmatter.title}</h1>
-        <small>{frontmatter.date}</small>
+        <small>{prettyDate}</small>
         <Divider hidden />
         <div
           className='blog-post-content'

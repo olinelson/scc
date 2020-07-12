@@ -7,9 +7,9 @@ import {
   JumboHeader
 } from '../components/styledComponents'
 import Events from '../components/Events'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import NewsPreview from '../components/NewsPreview'
-import { Button, Container, Divider, Image, Segment } from 'semantic-ui-react'
+import { Button, Container, Divider } from 'semantic-ui-react'
 import Layout from '../components/layout'
 
 // images
@@ -20,21 +20,9 @@ import concert2Image from '../images/resources/concert2.jpg'
 function IndexPage () {
   return (
     <Layout>
-      {/* <Segment
-          basic
-          fluid
-          style={{
-            backgroundImage: `url("${clarinetsImage}")`,
-            minHeight: '50vh',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <h1>Sydney Clarinet Choir</h1>
-        </Segment> */}
-
       <Jumbotron fullHeight src={clarinetsImage}>
         <JumboMessage>
-          <JumboHeader size='huge' as="h1" inverted>
+          <JumboHeader size='huge' as='h1' inverted>
             Sydney Clarinet Choir
           </JumboHeader>
         </JumboMessage>

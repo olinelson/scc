@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { Container, Item } from 'semantic-ui-react'
+import { Container, Item, Divider } from 'semantic-ui-react'
 
 import Img from 'gatsby-image'
 
@@ -22,6 +22,7 @@ const About = ({ location }) => {
 
   return (
     <Layout location={location}>
+      <Divider hidden />
       <Container text>
         <h1>About</h1>
         <p>

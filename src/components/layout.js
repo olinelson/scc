@@ -6,7 +6,7 @@ import { Container, Icon, Divider, List } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import Header from './header'
 
-import { SiteContainer, MobileOnlyDiv } from '../components/styledComponents'
+import { SiteContainer } from '../components/styledComponents'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -33,10 +33,6 @@ const Layout = ({ children }) => (
 
           <Header siteTitle={data.site.siteMetadata.title} />
 
-          <MobileOnlyDiv>
-            <Divider hidden />
-          </MobileOnlyDiv>
-
           <div style={{ margin: '0 auto', maxWidth: '100rem' }}>{children}</div>
         </div>
 
@@ -44,7 +40,6 @@ const Layout = ({ children }) => (
 
         <div style={{ gridArea: 'footer' }}>
           <Container textAlign='center'>
-            {/* <Image centered size="tiny" src="logos/logo.png" /> */}
             <h4>Sydney Clarinet Choir</h4>
 
             <List horizontal inverted={false} divided link size='small'>

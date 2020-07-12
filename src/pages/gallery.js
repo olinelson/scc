@@ -6,6 +6,7 @@ import Carousel from '../components/Carousel'
 
 const Gallery = ({ location }) => (
   <Layout location={location}>
+    <Divider hidden />
     <Container>
       <h1>Gallery</h1>
       <Carousel />
